@@ -1,187 +1,62 @@
-body {
-	background: #202020;
-  text-align: center;
+﻿body {
+    text-align: center;
+	background: linear-gradient(lightgreen, green);
 }
 
-canvas {
-	width: 90%;
-	height: 90%;
-	transition: all 1s linear;
+#container {
+	display: table; 
+	height: 160px;
+	width: 100%; 
+	overflow: hidden;
 }
 
-@media only screen and (min-width: 800px) {
-	canvas {
-		margin-top: 10px;
-		height: 707px;
-		width: 707px;
-	}
+#score-board {
+	display: table-cell; 
+	vertical-align: middle;
+	background-color: lightgreen;
+	color: #ADFF17;
+	font-size: 4em;
 }
 
-a:hover {
-	cursor: pointer;	
+#close-modal 
+{
+	text-decoration: none;
+	text-transform: none;
+	vertical-align: middle;
+	background-color: green;
+	color: white; 
+	padding: 2px;  
 }
 
-.heading {
-	color: #fff;
-	font-family: ArcadeClassic;	
-}
-
-/* Button */
-.button {
-	border-radius: 3px;
-	display: inline-block;
-	padding: 6px 40px;
-	margin: 65px;
-	background: #68d44f;
+.modalDialog {
+	position: fixed;
 	font-family: ArcadeClassic;
-	color: #fff;
-	font-size: 29px;
-	letter-spacing: 1px;
-	text-shadow: 1px 1px 1px green;
-}
-
-.button:hover {
-	opacity: 0.95;
-}
-
-/* Toggle Music */
-
-.toggle-music {
-	color: #fff;
-	position: absolute;
-	top: 10px;
-	right: -200px;
-	font-family: ArcadeClassic;
-	font-size: 17px;
-}
-
-.toggle-music.off {
-	display: none;
-}
-
-/* Responsive image */
-.image-responsive {
-	display: block;
-	width: 100%;	
-}
-
-/* Overlay */
-.overlay {
-	background: #202020;
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	z-index: 99999;	
-}
-
-.overlay > .content {
-	margin: auto;
-}
-
-.hidden {
-	display: none;
-}
-
-/* Header */
-header {
-	position: absolute;
-	width: 300px;
-	top: 15px;
-	left: 0;
-	right: 0;
-	margin: auto;	
-}
-
-/* Footer */
-footer {
-	padding: 0;
-	width: 100%;
-	margin: auto;
-	position: absolute;
-	text-align: center;
-	left: 0;
-	right: 0;
-	z-index: 99999;
-	top: 695px;
-}
-
-footer .how-to-link {
-	color: #fff;
-	font-family: ArcadeClassic;	
 	font-size: 20px;
-	word-spacing: 5px;
-}
-
-/* Start Screen */
-.start-screen > .content {
-	max-width: 600px;	
-	padding: 15% 10%;
-}
-
-.start-screen .grass {
-	background: url(../images/grass-block.png);
-	height: 172px;
-	width: 100%;
-	background-repeat: repeat-x;
-	position: absolute;
+	top: 0;
+	right: 0;
 	bottom: 0;
 	left: 0;
+	background: lightgreen;
+	z-index: 99999;
+	opacity:0;
+	-webkit-transition: opacity 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in;
+	transition: opacity 400ms ease-in;
+	pointer-events: none;
+}
+.modalDialog:target {
+	opacity:1;
+	pointer-events: auto;
 }
 
-/* How To Screen */
-
-.how-to > .content {
-	max-width: 600px;
-	padding: 5% 10%;
-}
-
-.how-to .heading {
-	font-size: 60px;
-}
-
-.how-to p {
-	color: #fff;
-	font-size: 20px;
-	letter-spacing: 1px;
-	font-family: ArcadeClassic;
-}
-
-/* Collision Overlay */
-
-.collision {
-	background: red;
-	opacity: 0.2;
-}
-
-/* Game Over Screen */
-.game-over > .content {
-	max-width: 800px;
-	margin-bottom: 0;
-	padding: 12% 10%;
-}
-
-.game-over .heading {
-	font-size: 100px;
-	margin-bottom: 0;
-}
-
-.game-over .final-score {
-	color: #fff;
-	font-family: ArcadeClassic;
-	font-size: 20px;
-}
-
-.game-over .final-score span {
-	margin-left: 5px;
-	font-size: 24px;
-}
-
-.game-over img {
-	position: absolute;
-	top: 140px;
-	right: 0;
-	left: 0;
-	margin: auto;	
+.modalDialog > div {
+	width: 400px;
+	position: relative;
+	margin: 10% auto;
+	padding: 5px 20px 13px 20px;
+	border-radius: 5px;
+	background: #fff;
+	background: -moz-linear-gradient(#E8FB2D, #ADFF17);
+	background: -webkit-linear-gradient(#E8FB2D, #ADFF17);
+	background: -o-linear-gradient(#E8FB2D, #ADFF17);
 }
