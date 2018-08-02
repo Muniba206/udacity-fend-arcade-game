@@ -85,23 +85,23 @@ Player.prototype.handleInput = function(keyCode) {
 	console.log(keyCode);
 	switch (keyCode) {
 	    case "left":
-	        if (player.x>1) player.x=player.x-101;
+	        if (this.x>1) this.x= this.x-101;
 	        break;
 	    case "right":
-	        if (player.x<400) player.x=player.x+101;
+	        if (this.x<400) this.x= this.x+101;
 	        break;
 	    case "up":
-	        if (player.y>120) {
-	        	player.y=player.y-83;
+	        if (this.y>120) {
+	        	this.y=this.y-83;
 	        } else {
-	        	player.y=377;
+	        	this.y=377;
 	        }
 	        break;
 	    case "down":
-	        if (player.y<370) player.y=player.y+83;
+	        if (this.y<370) this.y= this.y+83;
 	        break;
 	}
-	console.log("X, Y: " + player.x+", "+player.y);
+	console.log("X, Y: " + this.x+", "+this.y);
 
 };
 
